@@ -11,23 +11,12 @@
     </thead>
     <!-- tbody>tr*3>td*4 -->
     <tbody>
-        <tr>
+        <tr *ngFor="let makeup of makeups" [ngClass]="{'table-success':makeup.offer}">
+            <td><img [src]="makeup.image" [alt]="makeup.name"></td>
             <td>{{makeup.name}}</td>
             <td>{{makeup.category}}</td>
             <td>{{makeup.price}}</td>
-            <td>{{makeup.stock}}</td>
-        </tr>
-        <tr>
-            <td>Máscara de Pestañas Maybelline Sensational Sky High</td>
-            <td>Ojos</td>
-            <td>$3970</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>Base de maquillaje Maybelline Fit Me tono 02 </td>
-            <td>Rostro</td>
-            <td>$4000</td>
-            <td>5</td>
+            <td> <span class="badge rounded-pill text-bg-warning" *ngIf="makeup.stock==0">SIN STOCK</span></td>
         </tr>
     </tbody>
 </table>
