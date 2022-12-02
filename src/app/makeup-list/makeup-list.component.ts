@@ -15,6 +15,7 @@ makeups: Makeup []= [
   stock: 6,
   image: 'assets/img/labial-10.jpg',
   offer: false,
+  quantity: 0
   },
   {
     name:'Máscara de Pestañas Maybelline Sensational Sky High',
@@ -23,7 +24,8 @@ makeups: Makeup []= [
     stock: 0,
     image: 'assets/img/mascara-sky.jpg',
     offer: false,
-    },
+    quantity: 0  
+  },
     {
       name:'Base de maquillaje Maybelline Fit Me tono 128',
       category:'Rostro',
@@ -31,11 +33,29 @@ makeups: Makeup []= [
       stock: 5,
       image: 'assets/img/base-128.jpg',
       offer: true,
-      }
+      quantity: 0
+    }
 ]
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  downQuantity(makeup: Makeup) : void{
+    if(makeup.quantity > 0)
+    makeup.quantity--;
+  }
+
+  upQuantity(makeup: Makeup) : void{
+    if(makeup.quantity < makeup.stock)
+    makeup.quantity++;
+  }
+
+  //ver como arreglar
+  changeQuantity(event: KeyboardEvent, makeup: Makeup) : void{
+    if(!(event.key >= '0' && event.key <= '9')){
+
+    }
+
+  }
 }

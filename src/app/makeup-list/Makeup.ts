@@ -5,4 +5,5 @@ export interface Makeup{
   stock: number;
   image: string;
   offer: boolean;
+  quantity: number;
 }

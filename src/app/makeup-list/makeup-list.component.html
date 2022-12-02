@@ -1,5 +1,5 @@
 <!-- table>thead>tr>th*4 -->
-<table class="table">
+<table class="table text-cemter">
     <thead>
         <tr>
             <th>Imagen</th>
@@ -7,6 +7,7 @@
             <th>Categoría</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Cantidad</th>
         </tr>
     </thead>
     <!-- tbody>tr*3>td*4 -->
@@ -15,8 +16,11 @@
             <td><img [src]="makeup.image" [alt]="makeup.name"></td>
             <td>{{makeup.name}}</td>
             <td>{{makeup.category}}</td>
-            <td>{{makeup.price}}</td>
+            <td>{{makeup.price | currency}}</td>
             <td> <span class="badge rounded-pill text-bg-warning" *ngIf="makeup.stock==0">SIN STOCK</span></td>
+            <td class="cantidad"><button class="btn btn-light btn-sm " href="#" role="button" (click)="downQuantity(makeup)">-</button>
+             <input type="number" [(ngModel)]="makeup.quantity" (keyup)="changeQuantity($event,makeup)" (id)="makeup.name">
+                <button  class="btn btn-light btn-sm " href="#" role="button" (click)="upQuantity(makeup)">+</button></td>
         </tr>
     </tbody>
 </table>
