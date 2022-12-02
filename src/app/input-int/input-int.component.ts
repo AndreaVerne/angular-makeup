@@ -34,9 +34,8 @@ export class InputIntComponent implements OnInit {
   }
 
   //ver como arreglar
-  changeCant(event: KeyboardEvent): void {
+  changeCant(event: KeyboardEvent) {
     this.cantChange.emit(this.cant);
-
   }
 
   constructor() { }

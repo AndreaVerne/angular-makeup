@@ -19,9 +19,13 @@
             <td>{{makeup.price | currency}}</td>
             <td> <span class="badge rounded-pill text-bg-warning" *ngIf="makeup.stock==0">SIN STOCK</span></td>
             <td>
-                <app-input-int [cant]="makeup.quantity" [max]="makeup.stock" *ngIf="makeup.stock" (maxReached)="maxReached($event)"></app-input-int>
+                <app-input-int [(cant)]="makeup.quantity" [max]="makeup.stock" *ngIf="makeup.stock"
+                    (maxReached)="maxReached($event)">
+                    </app-input-int>
+                    <button class="btn btn-dark mt-3" (click)="addToCart(makeup)" *ngIf="makeup.stock">Agregar al carrito</button>
+                            
             </td>
         </tr>
-        
+
     </tbody>
 </table>

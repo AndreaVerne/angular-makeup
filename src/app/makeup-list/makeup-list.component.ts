@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MysticCartService } from '../mystic-cart.service';
 import { Makeup } from './Makeup';
 
 @Component({
@@ -37,13 +38,21 @@ makeups: Makeup []= [
       offer: true,
       quantity: 0
     }
-]
-  constructor() { }
+];
+
+  constructor(private cart: MysticCartService) {}
 
   ngOnInit(): void {
   }
 
   maxReached(evemto: number){
    console.log("Se alcanzo el maximo de stock");
+  }
+
+
+  addToCart(makeup: Makeup){
+    this.cart.addToCart(makeup); 
+    makeup.stock -= makeup.quantity;
+    makeup.quantity = 0;
   }
 }

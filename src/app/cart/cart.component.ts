@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MysticCartService } from '../mystic-cart.service';
+import { Observable } from 'rxjs';
+import { Makeup } from '../makeup-list/Makeup';
 
 @Component({
   selector: 'app-cart',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  lista!: Observable<Makeup[]>;
+  
+  constructor(private cart: MysticCartService) { }
 
   ngOnInit(): void {
   }
