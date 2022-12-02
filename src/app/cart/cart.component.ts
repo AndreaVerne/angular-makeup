@@ -10,11 +10,10 @@ import { Makeup } from '../makeup-list/Makeup';
 })
 export class CartComponent implements OnInit {
 
-  list: Makeup[] = [];
+  list$: Observable<Makeup[]>;
   
   constructor(private cart: MysticCartService) { 
-    cart.list.subscribe(observable => this.list = observable);
-    console.log(this.list);
+    this.list$ = cart.list.asObservable();
   }
 
   ngOnInit(): void {

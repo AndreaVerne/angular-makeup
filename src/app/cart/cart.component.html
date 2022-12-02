@@ -1,5 +1,5 @@
 <ul>
-    <li *ngFor="let makeup of list">
+    <li *ngFor="let makeup of list$ | async">
         {{makeup.name}}: {{makeup.quantity}}
     </li>
 </ul>
