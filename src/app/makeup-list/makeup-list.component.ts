@@ -51,8 +51,11 @@ makeups: Makeup []= [
 
 
   addToCart(makeup: Makeup){
+    if(makeup.quantity != 0)
     this.cart.addToCart(makeup); 
     makeup.stock -= makeup.quantity;
-    makeup.quantity = 0;
+      
+    
+  makeup.quantity = 0;
   }
 }

@@ -9,20 +9,19 @@ export class MysticCartService {
 
   constructor() { }
 
-  private list: Makeup[] = [];
-  //list: BehaviorSubject<Makeup[]> = new BehaviorSubject([this._list]);
+  private _list: Makeup[] = [];
+  list: BehaviorSubject<Makeup[]> = new BehaviorSubject(this._list);
 
   addToCart(makeup: Makeup) {
-    let item = this.list.find((v1) => v1.name = makeup.name);
-    //ver lo del tipo
+    let item = this._list.find((v1) => v1.name == makeup.name);
 
     if(!item){
-      this.list.push({...makeup});
+      this._list.push({...makeup});
     }
     else{
       item.quantity += makeup.quantity;
     }
-    console.log(this.list);
-    
+
+    this.list.next(this._list);
   }
 }

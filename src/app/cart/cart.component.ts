@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MysticCartService } from '../mystic-cart.service';
-import { Observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 import { Makeup } from '../makeup-list/Makeup';
 
 @Component({
@@ -10,9 +10,12 @@ import { Makeup } from '../makeup-list/Makeup';
 })
 export class CartComponent implements OnInit {
 
-  lista!: Observable<Makeup[]>;
+  list: Makeup[] = [];
   
-  constructor(private cart: MysticCartService) { }
+  constructor(private cart: MysticCartService) { 
+    cart.list.subscribe(observable => this.list = observable);
+    console.log(this.list);
+  }
 
   ngOnInit(): void {
   }
