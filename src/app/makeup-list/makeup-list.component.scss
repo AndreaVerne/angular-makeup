@@ -20,6 +20,23 @@ td {
 
 
 
-.cantidad{
+.cantidad {
     width: 3rem;
+}
+
+.btn-light,
+.table-light th {
+    background-color: rgb(231, 105, 126) !important;
+    border-color: rgb(231, 105, 126) !important;
+    color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }

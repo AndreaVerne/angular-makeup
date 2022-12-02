@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MakeupListComponent } from './makeup-list/makeup-list.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { MysticMakeupsComponent } from './mystic-makeups/mystic-makeups.component';
@@ -24,7 +26,8 @@ import { InputIntComponent } from './input-int/input-int.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

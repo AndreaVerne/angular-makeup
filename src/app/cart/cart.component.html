@@ -1,5 +1,17 @@
-<ul>
-    <li *ngFor="let makeup of list$ | async">
-        {{makeup.name}}: {{makeup.quantity}}
-    </li>
-</ul>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nombre del producto</th>
+        <th>Cantidad</th>
+        <th>Precio por unidad</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let makeup of list$ | async">
+            <td>{{makeup.name}}</td> 
+            <td>$ {{makeup.quantity}}</td>
+            <td>$ {{makeup.price}}</td>
+        </tr>
+
+    </tbody>
+</table>

@@ -7,3 +7,8 @@ export interface Makeup{
   offer: boolean;
   quantity: number;
 }
+
+// export interface MakeupItem{
+//   item: Makeup;
+//   quantity: number;
+// }

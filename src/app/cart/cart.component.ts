@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input,Output, OnInit } from '@angular/core';
 import { MysticCartService } from '../mystic-cart.service';
 import { observable, Observable } from 'rxjs';
 import { Makeup } from '../makeup-list/Makeup';
@@ -9,6 +9,12 @@ import { Makeup } from '../makeup-list/Makeup';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+[x: string]: any;
+
+@Input()
+tot: number = 0;
+@Output()
+total: number = 0;
 
   list$: Observable<Makeup[]>;
   
@@ -19,4 +25,7 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getTotal(){
+    console.log(this.list$);
+  }
 }

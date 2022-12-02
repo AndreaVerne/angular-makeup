@@ -1,7 +1,7 @@
 <!-- table>thead>tr>th*4 -->
 <table class="table text-cemter">
     <thead>
-        <tr>
+        <tr class="table-light">
             <th>Imagen</th>
             <th>Nombre</th>
             <th>Categoría</th>
@@ -22,7 +22,7 @@
                 <app-input-int [(cant)]="makeup.quantity" [max]="makeup.stock" *ngIf="makeup.stock"
                     (maxReached)="maxReached($event)">
                     </app-input-int>
-                    <button class="btn btn-dark mt-3" (click)="addToCart(makeup)" *ngIf="makeup.stock">Agregar al carrito</button>
+                    <button class="btn btn-light mt-3" (click)="addToCart(makeup)" *ngIf="makeup.stock">Agregar al carrito</button>
                             
             </td>
         </tr>

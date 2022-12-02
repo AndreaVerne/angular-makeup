@@ -1,1 +1,35 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
+.navbar{
+    background-color: rgb(231, 105, 126) !important;
+}
+
+.nav-link a{ 
+    color: white !important;
+}
+
+#logo{
+    color: rgb(255, 255, 255);
+    margin: auto;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+button{
+    background-color:  rgb(231, 105, 126) !important;
+    border-color: rgb(231, 105, 126) !important;
+ }
+
+ .nav-link{
+    color: white;
+ }
+
+ .nav-link:hover{
+    color: black;
+ }
+
+ footer{
+    background-color: rgb(231, 105, 126) !important;
+ }
