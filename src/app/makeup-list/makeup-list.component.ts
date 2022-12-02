@@ -7,6 +7,8 @@ import { Makeup } from './Makeup';
   styleUrls: ['./makeup-list.component.scss']
 })
 export class MakeupListComponent implements OnInit {
+
+  //Datos
 makeups: Makeup []= [
   {
   name:'Labial Maybelline superStay tono 10',
@@ -41,21 +43,7 @@ makeups: Makeup []= [
   ngOnInit(): void {
   }
 
-  downQuantity(makeup: Makeup) : void{
-    if(makeup.quantity > 0)
-    makeup.quantity--;
-  }
-
-  upQuantity(makeup: Makeup) : void{
-    if(makeup.quantity < makeup.stock)
-    makeup.quantity++;
-  }
-
-  //ver como arreglar
-  changeQuantity(event: KeyboardEvent, makeup: Makeup) : void{
-    if(!(event.key >= '0' && event.key <= '9')){
-
-    }
-
+  maxReached(evemto: number){
+   console.log("Se alcanzo el maximo de stock");
   }
 }

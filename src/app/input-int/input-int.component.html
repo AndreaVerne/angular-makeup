@@ -1,0 +1,11 @@
+<div class="input-group">
+    <button class="btn btn-light btn-sm " href="#" role="button" (click)="downCant()">
+        <span class="glyphicon glyphicon-minus" aria-hidden="true">-</span>
+    </button>
+    <input type="number" class="smallInput" [(ngModel)]="cant"
+        (keyup)="changeCant($event)">
+    <button class="btn btn-light btn-sm " href="#" role="button" (click)="upCant()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true">+</span>
+    </button>
+</div>
+<td [ngClass]="{'alert alert-danger max':cant>max}" *ngIf="cant>max" Class="" role="alert" >Se alcanzó el máximo de stock</td>
